@@ -1,7 +1,7 @@
-<h1>courses</h1>
+<h1>Курсы</h1>
 
-{{#if courses.length }}
-{{#each courses  }}
+{{#if courses.length}}
+{{#each courses}}
 <div class="row">
   <div class="col s6 offset-s3">
     <div class="card">
@@ -13,12 +13,12 @@
         <p class="price">{{price}}</p>
       </div>
       <div class="card-action">
-        <a href="/courses/{{id}}">Open course</a>
+        <a href="/courses/{{id}}" target="_blank">Открыть курс</a>
       </div>
     </div>
   </div>
 </div>
-{{/each  }}
+{{/each}}
 {{else}}
-<p>Courses are emty</p>
-{{/if  }}
+<p>Курсов пока нет</p>
+{{/if}}

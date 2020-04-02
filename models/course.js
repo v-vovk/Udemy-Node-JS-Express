@@ -7,7 +7,7 @@ class Course {
     this.title = title
     this.price = price
     this.img = img
-    this.id = uuid
+    this.id = uuid()
   }
 
   toJSON() {
@@ -27,7 +27,7 @@ class Course {
       fs.writeFile(
         path.join(__dirname, '..', 'data', 'courses.json'),
         JSON.stringify(courses),
-        err => {
+        (err) => {
           if (err) {
             reject(err)
           } else {
@@ -52,6 +52,11 @@ class Course {
         }
       )
     })
+  }
+
+  static async getById(id) {
+    const courses = await Course.getAll()
+    return courses.find(c => c.id === id)
   }
 }
 

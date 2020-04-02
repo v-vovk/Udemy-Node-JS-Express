@@ -1,10 +1,10 @@
-const { Router } = require('express')
+const {Router} = require('express')
 const Course = require('../models/course')
 const router = Router()
 
 router.get('/', (req, res) => {
   res.render('add', {
-    title: 'Add new courses',
+    title: 'Добавить курс',
     isAdd: true
   })
 })
