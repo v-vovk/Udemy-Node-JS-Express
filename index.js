@@ -6,6 +6,7 @@ const {
   allowInsecurePrototypeAccess
 } = require('@handlebars/allow-prototype-access')
 const mongoose = require('mongoose')
+
 const homeRoutes = require('./routes/home')
 const cartRoutes = require('./routes/cart')
 const addRoutes = require('./routes/add')
@@ -40,7 +41,8 @@ async function start() {
 
     await mongoose.connect(URL, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useFindAndModify: false
     })
 
     app.listen(PORT, () => {
